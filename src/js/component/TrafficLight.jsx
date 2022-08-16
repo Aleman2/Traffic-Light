@@ -8,12 +8,8 @@ const TrafficLight = () => {
   let array = ["red", "orange", "green", "purple"];
 
   useEffect(() => {
-    if (change > 3) {
-      setChange(0);
-    } else {
-      setColor(array[change]);
-    }
-  }, [change]);
+    change > 3? setChange(0):setColor(array[change]);
+    }, [change]);
 
   return (
     <>
@@ -42,11 +38,8 @@ const TrafficLight = () => {
         </ul>
       </div>
       <div className="w-25 mx-auto mt-5 d-flex justify-content-around">
-        <button className="btn btn-success" onClick={() => setShow(true)}>
-          Show
-        </button>
-        <button className="btn btn-danger" onClick={() => setShow(false)}>
-          Hide
+        <button className="btn btn-success" onClick={() => setShow(show?false:true)}>
+          Show or Hide
         </button>
         <button
           className="btn btn-primary"
